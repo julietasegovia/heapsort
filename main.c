@@ -1,8 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "heapsort.h"
 
 int main(){
-
     int array[6];
 
     for(int i = 0; i<6; i++){
@@ -12,13 +12,14 @@ int main(){
 
     array_a_heap(array, 6);
 
-    int *array_ordenado;
+    int *array_ordenado = malloc(6 * sizeof(int));
 
-    //heapsort(array, 6, array_ordenado);
+    heapsortt(array, 6, array_ordenado);
 
     for(int i = 0; i<6; i++){
-        printf("%i, ", array[i]);
+        printf("%i, ", array_ordenado[i]);
     }
 
+    free(array_ordenado);
     return 0;
 }
